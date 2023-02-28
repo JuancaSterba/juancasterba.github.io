@@ -1,0 +1,260 @@
+/* Theming */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"); /* import font */
+@import url("https://fonts.googleapis.com/css?family=Roboto"); /* import font */
+
+:root{
+    --white: #f9f9f9;
+    --black: #36383F;
+    --gray: #85888C;
+} /* variables*/
+
+/* Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--white);
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+
+/* Header */
+.header{
+    background-color: var(--black);
+    box-shadow: 1px 1px 5px 0px var(--gray);
+    position: sticky;
+    top: 0;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+}
+/* Logo */
+.logo{
+    display: inline-block;
+    color: var(--white);
+    font-size: 60px;
+    margin-left: 10px;
+}
+/* Nav menu */
+.nav{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: var(--black);
+    opacity: 1;
+    overflow: hidden;
+
+}
+.menu a{
+    display: block;
+    padding: 30px;
+    color: var(--white);
+}
+.menu a:hover{
+    background-color: var(--gray);
+}
+.nav{
+    max-height: 0;
+    transition: max-height .5s ease-out;
+}
+
+/* Menu Icon */
+.hamb{
+    cursor: pointer;
+    float: right;
+    padding: 40px 20px;
+}/* Style label tag */
+
+.hamb-line {
+    background: var(--white);
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 24px;
+
+} /* Style span tag */
+
+.hamb-line::before,
+.hamb-line::after{
+    background: var(--white);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+.hamb-line::before{
+    top: 5px;
+}
+.hamb-line::after{
+    top: -5px;
+}
+
+.side-menu {
+    display: none;
+} /* Hide checkbox */
+
+/* Toggle menu icon */
+.side-menu:checked ~ nav{
+    max-height: 100%;
+}
+.side-menu:checked ~ .hamb .hamb-line {
+    background: transparent;
+}
+.side-menu:checked ~ .hamb .hamb-line::before {
+    transform: rotate(-45deg);
+    top:0;
+}
+.side-menu:checked ~ .hamb .hamb-line::after {
+    transform: rotate(45deg);
+    top:0;
+}
+
+/* Main */
+.main {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Responsiveness */
+@media (min-width: 780px) {
+    .nav{
+        max-height: none;
+        top: 0;
+        position: relative;
+        float: right;
+        width: fit-content;
+        background-color: transparent;
+    }
+    .menu li{
+        float: left;
+    }
+    .menu a:hover{
+        background-color: transparent;
+        color: var(--gray);
+    }
+
+    .hamb{
+        display: none;
+    }
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.third-col, .two-third-col {
+    flex: 100%;
+}
+
+@media (max-width: 779px) {
+    .flex-container{flex-direction: column;}
+    .logo{font-size: 30px;}
+    .hamb{padding:20px;}
+    
+}
+
+@media (min-width: 780px) {
+    .third-col{
+        flex: 33.33%;
+    }
+    .two-third-col{
+        flex: 66.66%;
+    }
+}
+
+.section{
+    margin: 0 8px;
+    padding: 0 8px;
+    box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 19%);
+}
+
+.work-section{
+    margin-bottom: 16px;
+}
+
+h2, h3, h4 {
+    padding: 8px 0;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+h5 {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 0;
+
+}
+
+.bar {
+    background-color: #f1f1f1;
+    border-radius: 16px;
+    font-size: 12px;
+    color: #000;
+}
+.status {
+    background-color:darkgreen;
+    text-align: center;
+    color: #f1f1f1;
+    border-radius: 16px;
+}
+
+.footer {
+    text-align: center;
+    background-color: #36383F;
+    color: #f9f9f9;
+    font-size: large;
+    padding: 16px;
+}
+
+footer.footer > p, i {
+    padding: 8px;
+}
+
+.fa {
+    margin-right: 16px;
+    color: teal;
+}
+
+.footer a:hover {
+    opacity: .5;
+}
+
+/* text animation */
+.ml6 {
+    position: relative;
+    font-weight: 900;
+    font-size: 16px;
+}
+  
+.ml6 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.2em;
+    padding-right: 0.05em;
+    padding-bottom: 0.1em;
+    overflow: hidden;
+}
+  
+.ml6 .letter {
+    display: inline-block;
+    line-height: 1em;
+}
